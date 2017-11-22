@@ -8,7 +8,9 @@ There are a few different moving pieces:
 
 ## Your models.py
 
-Python code that describes what you want the schema for the tables in your database(s) to look like.
+Python code that describes how you want to store data for your app in your database.
+
+The python classes in this module correlate extremely closely with the schema for the tables in your database(s).
 
 ## Your Database
 
