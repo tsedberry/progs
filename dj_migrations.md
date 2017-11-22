@@ -3,8 +3,8 @@
 There are a few different moving pieces:
  - models.py
  - the state of the database
- - the django_migrations table
- - the modules in the migrations/ directory
+ - the django_migrations table (migrations table)
+ - the modules in the migrations/ directory (migrations files)
 
 ## Your models.py
 
