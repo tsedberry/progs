@@ -149,3 +149,5 @@ Verify that the Book table has been removed from the database, and the 0002_adde
 ```
 TODO
 ```
+
+A cool side effect of having the migrations table (checklist) in the database is that when you switch databases (e.g. from sqlite3 development to msql production) the migration python files with the instructions on how to build the database are retained unmodified, but the new database is presumably empty and does not have any entries in the migrations table which correctly denotes that no migrations have been applied to this new database.
