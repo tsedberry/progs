@@ -1,0 +1,21 @@
+# this file can be used to enable systemd management of a uwsgi instance installed in a python virtual environment with commands like:
+#   sudo systemctl start|stop|status uwsgi
+# the standard location for user created systemd files is: /etc/systemd/system/
+
+[Unit]
+Description=uWSGI Emperor Service
+After=syslog.target
+
+[Service]
+ExecStart=/path/to/venv/bin/uwsgi --emperor /path/to/vassals/ --binary-path /path/to/venv/bin/uwsgi --logger file:logfile=/var/log/uwsgi/emperor.log,maxsize=20000000
+RuntimeDirectory=uwsgi
+KillSignal=SIGQUIT
+Restart=always
+Type=notify
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target
+
+#RuntimeDirectory may require appropriate directory to be created in /run or /var/run
+#Standard location to put vassals directory is /etc/uwsgi/vassals/
