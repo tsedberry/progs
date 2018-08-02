@@ -2,6 +2,14 @@
 This script attempts the simulate the following problem (taken from: http://fivethirtyeight.com/features/will-someone-be-sitting-in-your-seat-on-the-plane/)
 There’s an airplane with 100 seats, and there are 100 ticketed passengers each with an assigned seat. They line up to board in some random order. However, the first person to board is the worst person alive, and just sits in a random seat, without even looking at his boarding pass. Each subsequent passenger sits in his or her own assigned seat if it’s empty, but sits in a random open seat if the assigned seat is occupied. What is the probability that you, the hundredth passenger to board, finds your seat unoccupied?
 """
+"""
+Solution (mine):
+In all cases it boils down to two scenarios:
+
+    the asshole sits in your seat or his seat (50% chance of success: guaranteed failure if he sits in your seat, guaranteed success if he sits in his seat)
+    the asshole sits in someone else's seat (neither yours nor his) leaving his seat vacant, and the problem reduces to an identical scenario on a smaller plane.
+"""
+
 import random
 
 def all_aboard(number_of_seats):
